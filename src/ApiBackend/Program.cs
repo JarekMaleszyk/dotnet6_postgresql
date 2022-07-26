@@ -11,7 +11,7 @@ builder.Services.AddScoped<ITaskParameterService, TaskParameterService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(opt => 
+builder.Services.AddSwaggerGen(opt =>
     opt.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
