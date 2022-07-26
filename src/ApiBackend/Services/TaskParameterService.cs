@@ -25,8 +25,8 @@ namespace SimpleCrudApi.Services
         }
         public AllTaskParameterDto CreateTaskParameter(NewTaskParameterDto dto, int tSettingId)
         {
-            if(_context.TaskSettings.FirstOrDefault(x => x.Id == tSettingId) == null)
-                return null;
+            if (_context.TaskSettings.FirstOrDefault(x => x.Id == tSettingId) == null)
+                throw new Exception($"There is no task with id: {tSettingId}");
 
             var tParameter = _mapper.Map<TaskParameter>(dto);
             tParameter.TaskSetingId = tSettingId;

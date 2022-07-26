@@ -54,12 +54,12 @@ namespace SimpleCrudApi.Services
 
         public List<AllTaskSettingDto> GetAllSettingAsync()
         {
-            return _mapper.Map<List<AllTaskSettingDto>>(_context.TaskSettings.ToList());
+            return _mapper.Map<List<AllTaskSettingDto>>(_context.TaskSettings.Include(x => x.TaskParameters).ToList());
         }
 
         public List<AllTaskSettingDto> GetSettingAsync(string taskUniqCode)
         {
-            return _mapper.Map<List<AllTaskSettingDto>>(_context.TaskSettings.Where(x => x.TaskUniqCode == taskUniqCode).ToList());
+            return _mapper.Map<List<AllTaskSettingDto>>(_context.TaskSettings.Include(x => x.TaskParameters).Where(x => x.TaskUniqCode == taskUniqCode).ToList());
         }
 
         public AllTaskSettingDto UpdateSettingAsync(EditTaskSettingDto dto, int id)

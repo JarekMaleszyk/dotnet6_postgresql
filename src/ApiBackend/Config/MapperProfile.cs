@@ -28,6 +28,7 @@ namespace SimpleCrudApi.Config
             CreateMap<AllTaskParameterDto, TaskParameter>();
 
             CreateMap<NewTaskParameterDto, TaskParameter>();
+                //.ForMember(x => x.ParameterName, y => y.MapFrom(z => z.ParameterName));
 
         }
     }
