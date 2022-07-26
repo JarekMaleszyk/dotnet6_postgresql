@@ -73,8 +73,8 @@ namespace SimpleCrudApi.Services
             taskSetting.TaskPath = dto.TaskPath;
             taskSetting.TaskFileName = dto.TaskFileName;
 
-            _context.Update(taskSetting); 
-            _context.SaveChanges(); 
+            _context.Update(taskSetting);
+            _context.SaveChanges();
 
             return _mapper.Map<AllTaskSettingDto>(taskSetting); //remap
         }
